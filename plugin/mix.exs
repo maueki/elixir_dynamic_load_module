@@ -7,6 +7,7 @@ defmodule Plugin.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     plugin_mod: Plugin,
      deps: deps()]
   end
 
@@ -14,7 +15,7 @@ defmodule Plugin.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: [:logger, :httpoison]]
   end
 
   # Dependencies can be Hex packages:
